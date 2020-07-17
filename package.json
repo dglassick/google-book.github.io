@@ -1,0 +1,27 @@
+{
+  "name": "google-book.github.io",
+  "version": "1.0.0",
+  "description": "MERN Stack that helps user keep track of books using Google API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dglassick/google-book.github.io.git"
+  },
+  "author": "Derek Glassick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dglassick/google-book.github.io/issues"
+  },
+  "homepage": "https://github.com/dglassick/google-book.github.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.24"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
