@@ -16,7 +16,7 @@ export default {
   },
   // saves book to datbase
   saveBook: function (savedBook) {
-    return axios.post('/api/books/' + savedBook);
+    return axios.post('/api/books/', savedBook);
   },
   deleteBook: function (id) {
     return axios.delete('/api/books/' + id);
