@@ -3,7 +3,9 @@ const db = require('../models');
 
 //Empties books and insterts seed
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks');
+mongoose
+  .connect('mongodb://localhost:27017/googlebooks')
+  .then(console.log('Connected to Mongo'));
 
 const seed = {
   author: ['Steven Erikson'],
@@ -16,8 +18,8 @@ const seed = {
   title: 'Gardens of the Moon'
 };
 
-db.Book.remove({})
-  .then(() => db.Book.collection.insertMany(seed))
+db.Book.deleteOne({})
+  .then(() => db.Book.collection.insert(seed))
   .then(data => {
     console.log(data.result.n + ' books saved.');
     process.exit(0);
