@@ -6,7 +6,7 @@ function SearchBar(props) {
       <input
         type='text'
         className='form-control'
-        name='title'
+        name='search'
         placeholder='Search for a book...'
         onChange={props.handleInputChange}
       />
