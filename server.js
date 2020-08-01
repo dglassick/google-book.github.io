@@ -9,14 +9,23 @@ const routes = require('./routes');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 // api routes defined here
 app.use(routes);
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/googlebooks', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  .connect(
+    process.env.MONGODB_URI ||
+      'mongodb://user123:user123@ds159772.mlab.com:59772/heroku_7czht1t0',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  )
   .then(console.log('Connected to Mongo'));
 
 // Send every other request to the React app
